@@ -1,0 +1,13 @@
+version: "3"
+
+name: cordada-cms
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=cordada_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=cordada_cms
+    ports:
+      - "5432:5432"
