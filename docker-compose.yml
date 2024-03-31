@@ -3,7 +3,7 @@ version: "3"
 name: cordada-cms
 
 services:
-  postgres:
+  db:
     image: postgres:15
     environment:
       - POSTGRES_USER=cordada_user
