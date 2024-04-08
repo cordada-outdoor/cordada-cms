@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "projects",
   "info": {
-    "singularName": "post",
-    "pluralName": "posts",
-    "displayName": "post",
-    "description": ""
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project"
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +22,15 @@
         }
       },
       "type": "string",
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
       "required": true
     }
   }
