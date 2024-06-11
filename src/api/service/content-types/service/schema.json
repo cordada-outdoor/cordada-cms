@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "types",
+  "collectionName": "services",
   "info": {
-    "singularName": "type",
-    "pluralName": "types",
-    "displayName": "Type",
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
     "description": ""
   },
   "options": {
@@ -17,13 +17,13 @@
   },
   "attributes": {
     "name": {
-      "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
-      }
+      },
+      "type": "string",
+      "required": true
     },
     "description": {
       "pluginOptions": {
@@ -38,7 +38,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::project.project",
-      "mappedBy": "type"
+      "mappedBy": "service"
     }
   }
 }

@@ -839,11 +839,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    type: Attribute.Relation<
-      'api::project.project',
-      'manyToOne',
-      'api::type.type'
-    >;
     date: Attribute.Date &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -851,6 +846,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
           localized: false;
         };
       }>;
+    service: Attribute.Relation<
+      'api::project.project',
+      'manyToOne',
+      'api::service.service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -875,12 +875,12 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
-export interface ApiTypeType extends Schema.CollectionType {
-  collectionName: 'types';
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
   info: {
-    singularName: 'type';
-    pluralName: 'types';
-    displayName: 'Type';
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'Service';
     description: '';
   };
   options: {
@@ -896,7 +896,7 @@ export interface ApiTypeType extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     description: Attribute.Text &
@@ -907,21 +907,29 @@ export interface ApiTypeType extends Schema.CollectionType {
         };
       }>;
     projects: Attribute.Relation<
-      'api::type.type',
+      'api::service.service',
       'oneToMany',
       'api::project.project'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
-    updatedBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::type.type',
+      'api::service.service',
       'oneToMany',
-      'api::type.type'
+      'api::service.service'
     >;
     locale: Attribute.String;
   };
@@ -947,7 +955,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::client.client': ApiClientClient;
       'api::project.project': ApiProjectProject;
-      'api::type.type': ApiTypeType;
+      'api::service.service': ApiServiceService;
     }
   }
 }

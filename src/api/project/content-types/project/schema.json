@@ -40,12 +40,6 @@
       "type": "text",
       "required": true
     },
-    "type": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::type.type",
-      "inversedBy": "projects"
-    },
     "date": {
       "pluginOptions": {
         "i18n": {
@@ -54,6 +48,12 @@
       },
       "type": "date",
       "required": true
+    },
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "projects"
     }
   }
 }
