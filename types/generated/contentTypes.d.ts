@@ -786,6 +786,7 @@ export interface ApiClientClient extends Schema.CollectionType {
       'oneToMany',
       'api::project.project'
     >;
+    logo: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -839,6 +840,31 @@ export interface ApiProjectProject extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    type: Attribute.Relation<
+      'api::project.project',
+      'manyToOne',
+      'api::type.type'
+    >;
+    date: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    thumbnail: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    banner: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -858,6 +884,58 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::project.project',
       'oneToMany',
       'api::project.project'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiTypeType extends Schema.CollectionType {
+  collectionName: 'types';
+  info: {
+    singularName: 'type';
+    pluralName: 'types';
+    displayName: 'Type';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    projects: Attribute.Relation<
+      'api::type.type',
+      'oneToMany',
+      'api::project.project'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::type.type',
+      'oneToMany',
+      'api::type.type'
     >;
     locale: Attribute.String;
   };
@@ -883,6 +961,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::client.client': ApiClientClient;
       'api::project.project': ApiProjectProject;
+      'api::type.type': ApiTypeType;
     }
   }
 }
