@@ -911,6 +911,13 @@ export interface ApiServiceService extends Schema.CollectionType {
       'oneToMany',
       'api::project.project'
     >;
+    quote: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
