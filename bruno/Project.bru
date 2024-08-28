@@ -1,0 +1,23 @@
+meta {
+  name: Project
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{HOST}}/api/projects/:id?populate=*
+  body: none
+  auth: bearer
+}
+
+params:query {
+  populate: *
+}
+
+params:path {
+  id: 3
+}
+
+auth:bearer {
+  token: {{TOKEN}}
+}

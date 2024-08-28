@@ -1,0 +1,15 @@
+meta {
+  name: Projects
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{HOST}}/api/projects?populate=*
+  body: none
+  auth: inherit
+}
+
+params:query {
+  populate: *
+}
