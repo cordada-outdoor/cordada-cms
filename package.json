@@ -34,5 +34,5 @@
   "strapi": {
     "uuid": "d79db16f-bd76-4972-a620-70ec2243fa4f"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.5.0"
 }
