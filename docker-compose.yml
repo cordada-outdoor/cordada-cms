@@ -1,6 +1,16 @@
 name: cordada-cms
 
 services:
+  api:
+    build: .
+    command: yarn start
+    environment:
+      DATABASE_HOST: db
+    env_file:
+      - .env
+    ports:
+      - "1337:1337"
+
   db:
     image: postgres:15
     environment:
