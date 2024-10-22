@@ -21,3 +21,7 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: marcmarina/cordada-cms:latest
+    - name: Deploy to Render
+      uses: enflo/curl-action@master
+      with:
+        curl: -X GET ${{ secrets.DEPLOY_HOOK_URL }}
