@@ -54,6 +54,19 @@
       "relation": "manyToOne",
       "target": "api::service.service",
       "inversedBy": "projects"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
     }
   }
 }

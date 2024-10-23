@@ -847,6 +847,7 @@ export interface ApiClientClient extends Schema.CollectionType {
       'oneToMany',
       'api::project.project'
     >;
+    icon: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -912,6 +913,13 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'manyToOne',
       'api::service.service'
     >;
+    image: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -977,6 +985,13 @@ export interface ApiServiceService extends Schema.CollectionType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    banner: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;

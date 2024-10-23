@@ -22,6 +22,14 @@
       "relation": "oneToMany",
       "target": "api::project.project",
       "mappedBy": "client"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
