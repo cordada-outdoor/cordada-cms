@@ -30,3 +30,5 @@ COPY --from=build /usr/src/app/src ./src
 COPY --from=build /usr/src/app/dist ./dist
 COPY --from=build /usr/src/app/public ./public
 COPY --from=build /usr/src/app/.yarn ./.yarn
+
+RUN mkdir sqlite

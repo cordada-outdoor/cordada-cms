@@ -10,17 +10,5 @@ services:
       - .env
     ports:
       - "1337:1337"
-
-  db:
-    image: postgres:15
-    environment:
-      - POSTGRES_USER=cordada_user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=cordada_cms
-    ports:
-      - "5432:5432"
     volumes:
-      - pg-data:/var/lib/postgresql/data
-
-volumes:
-  pg-data:
+      - ./sqlite:/usr/src/app/sqlite
