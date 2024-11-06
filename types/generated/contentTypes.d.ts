@@ -894,13 +894,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'manyToOne',
       'api::client.client'
     >;
-    body: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     date: Attribute.Date &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -920,13 +913,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    bodyMarkdown: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    bodyBlocks: Attribute.Blocks &
+    body: Attribute.RichText &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -980,30 +968,23 @@ export interface ApiServiceService extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    description: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     projects: Attribute.Relation<
       'api::service.service',
       'oneToMany',
       'api::project.project'
     >;
-    quote: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     banner: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    body: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     createdAt: Attribute.DateTime;

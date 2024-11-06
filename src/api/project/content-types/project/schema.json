@@ -31,15 +31,6 @@
       "target": "api::client.client",
       "inversedBy": "projects"
     },
-    "body": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text",
-      "required": true
-    },
     "date": {
       "pluginOptions": {
         "i18n": {
@@ -68,23 +59,14 @@
         }
       }
     },
-    "bodyMarkdown": {
+    "body": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "richtext",
-      "required": false
-    },
-    "bodyBlocks": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "blocks",
-      "required": false
+      "required": true
     }
   }
 }

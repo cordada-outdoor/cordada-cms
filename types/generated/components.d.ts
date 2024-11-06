@@ -8,8 +8,8 @@ export interface AboutUsPersonAboutUsPerson extends Schema.Component {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    body: Attribute.Text & Attribute.Required;
     profilePicture: Attribute.Media & Attribute.Required;
+    body: Attribute.RichText & Attribute.Required;
   };
 }
 

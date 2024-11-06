@@ -10,10 +10,6 @@
       "type": "string",
       "required": true
     },
-    "body": {
-      "type": "text",
-      "required": true
-    },
     "profilePicture": {
       "type": "media",
       "multiple": false,
@@ -21,6 +17,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
