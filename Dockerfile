@@ -12,7 +12,9 @@ COPY ./types ./types
 COPY ./public ./public
 COPY ./config ./config
 
-RUN NODE_ENV=production yarn build
+ENV NODE_ENV=production
+
+RUN yarn build
 
 FROM node:18.19-slim
 
