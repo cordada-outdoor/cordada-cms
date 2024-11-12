@@ -40,9 +40,9 @@
       "type": "date",
       "required": true
     },
-    "service": {
+    "services": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::service.service",
       "inversedBy": "projects"
     },

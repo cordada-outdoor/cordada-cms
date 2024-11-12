@@ -901,9 +901,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    service: Attribute.Relation<
+    services: Attribute.Relation<
       'api::project.project',
-      'manyToOne',
+      'manyToMany',
       'api::service.service'
     >;
     image: Attribute.Media &
@@ -975,11 +975,6 @@ export interface ApiServiceService extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    projects: Attribute.Relation<
-      'api::service.service',
-      'oneToMany',
-      'api::project.project'
-    >;
     banner: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -994,6 +989,11 @@ export interface ApiServiceService extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    projects: Attribute.Relation<
+      'api::service.service',
+      'manyToMany',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

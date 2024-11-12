@@ -25,12 +25,6 @@
       "type": "string",
       "required": true
     },
-    "projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::project.project",
-      "mappedBy": "service"
-    },
     "banner": {
       "type": "media",
       "multiple": false,
@@ -52,6 +46,12 @@
       },
       "type": "richtext",
       "required": true
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "services"
     }
   }
 }
