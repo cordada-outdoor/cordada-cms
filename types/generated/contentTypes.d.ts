@@ -777,7 +777,7 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -807,7 +807,6 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::about-us-page.about-us-page',
       'oneToOne',
@@ -874,7 +873,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -929,7 +928,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::project.project',
       'oneToOne',
@@ -960,7 +958,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -996,7 +994,6 @@ export interface ApiServiceService extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::service.service',
       'oneToOne',
