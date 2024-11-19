@@ -865,6 +865,36 @@ export interface ApiClientClient extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomepageImageHomepageImage extends Schema.SingleType {
+  collectionName: 'homepage_images';
+  info: {
+    singularName: 'homepage-image';
+    pluralName: 'homepage-images';
+    displayName: 'Homepage image';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    images: Attribute.Component<'homepage.home-hero-image', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage-image.homepage-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage-image.homepage-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -1038,6 +1068,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::client.client': ApiClientClient;
+      'api::homepage-image.homepage-image': ApiHomepageImageHomepageImage;
       'api::project.project': ApiProjectProject;
       'api::service.service': ApiServiceService;
     }

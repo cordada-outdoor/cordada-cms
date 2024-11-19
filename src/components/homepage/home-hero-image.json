@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_homepage_home_hero_images",
+  "info": {
+    "displayName": "Home hero image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

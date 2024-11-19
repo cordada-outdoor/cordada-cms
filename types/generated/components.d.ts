@@ -13,10 +13,23 @@ export interface AboutUsPersonAboutUsPerson extends Schema.Component {
   };
 }
 
+export interface HomepageHomeHeroImage extends Schema.Component {
+  collectionName: 'components_homepage_home_hero_images';
+  info: {
+    displayName: 'Home hero image';
+    description: '';
+  };
+  attributes: {
+    hero: Attribute.Media;
+    logo: Attribute.Media & Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'about-us-person.about-us-person': AboutUsPersonAboutUsPerson;
+      'homepage.home-hero-image': HomepageHomeHeroImage;
     }
   }
 }
