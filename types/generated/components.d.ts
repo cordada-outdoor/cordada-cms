@@ -20,7 +20,7 @@ export interface HomepageHomeHeroImage extends Schema.Component {
     description: '';
   };
   attributes: {
-    hero: Attribute.Media;
+    hero: Attribute.Media & Attribute.Required;
     logo: Attribute.Media & Attribute.Required;
   };
 }
