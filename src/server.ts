@@ -1,5 +1,5 @@
-import strapi from "@strapi/strapi";
+import { createStrapi } from "@strapi/strapi";
 
-strapi({
+createStrapi({
   distDir: "./dist",
 }).start();

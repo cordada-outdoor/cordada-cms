@@ -1,33 +1,34 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface AboutUsPersonAboutUsPerson extends Schema.Component {
+export interface AboutUsPersonAboutUsPerson extends Struct.ComponentSchema {
   collectionName: 'components_about_us_person_about_us_people';
   info: {
-    displayName: 'About Us Person';
     description: '';
+    displayName: 'About Us Person';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    profilePicture: Attribute.Media & Attribute.Required;
-    body: Attribute.RichText & Attribute.Required;
+    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    profilePicture: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
   };
 }
 
-export interface HomepageHomeHeroImage extends Schema.Component {
+export interface HomepageHomeHeroImage extends Struct.ComponentSchema {
   collectionName: 'components_homepage_home_hero_images';
   info: {
-    displayName: 'Home hero image';
     description: '';
+    displayName: 'Home hero image';
   };
   attributes: {
-    hero: Attribute.Media & Attribute.Required;
-    logo: Attribute.Media & Attribute.Required;
+    hero: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'about-us-person.about-us-person': AboutUsPersonAboutUsPerson;
       'homepage.home-hero-image': HomepageHomeHeroImage;
     }
