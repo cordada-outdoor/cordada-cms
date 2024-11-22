@@ -26,18 +26,27 @@
       "required": true
     },
     "heroImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
+      }
+    },
+    "servicesCopy": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
       },
-      "required": false
+      "type": "richtext",
+      "required": true
     }
   }
 }
