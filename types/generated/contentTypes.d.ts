@@ -458,35 +458,6 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiHomepageImageHomepageImage extends Struct.SingleTypeSchema {
-  collectionName: 'homepage_images';
-  info: {
-    description: '';
-    displayName: 'Homepage image';
-    pluralName: 'homepage-images';
-    singularName: 'homepage-image';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    images: Schema.Attribute.Component<'homepage.home-hero-image', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homepage-image.homepage-image'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -1173,7 +1144,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::client.client': ApiClientClient;
-      'api::homepage-image.homepage-image': ApiHomepageImageHomepageImage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::project.project': ApiProjectProject;
       'api::service.service': ApiServiceService;
