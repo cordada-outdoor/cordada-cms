@@ -19,7 +19,6 @@
     "@strapi/plugin-cloud": "5.4.0",
     "@strapi/plugin-users-permissions": "5.4.0",
     "@strapi/strapi": "5.4.0",
-    "axios": "^1.12.2",
     "better-sqlite3": "^11.3.0",
     "pg": "8.8.0",
     "prom-client": "^15.1.3",
