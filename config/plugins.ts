@@ -3,7 +3,7 @@ export default {
   prometheus: {
     enabled: true,
     config: {
-      collectDefaultMetrics: false,
+      collectDefaultMetrics: true,
       // labels: {
       //   app: "my-strapi-app",
       //   environment: process.env.NODE_ENV || "development"
