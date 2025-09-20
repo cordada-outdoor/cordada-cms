@@ -3,11 +3,10 @@ export default {
   prometheus: {
     enabled: true,
     config: {
-      collectDefaultMetrics: true,
-      // labels: {
-      //   app: "my-strapi-app",
-      //   environment: process.env.NODE_ENV || "development"
-      // },
+      labels: {
+        service: "cordada_cms",
+        environment: process.env.NODE_ENV || "development",
+      },
       server: {
         port: parseInt(process.env.METRICS_PORT || "9000"),
         host: process.env.METRICS_HOST || "0.0.0.0",
