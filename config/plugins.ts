@@ -17,9 +17,16 @@ export default {
       normalize: (ctx) => {
         let path = ctx.path;
 
-        // Custom logic for your specific needs
-        if (path.startsWith("/api/")) {
-          path = path.replace(/\/\d+/g, "/:id"); // Replace numeric IDs
+        if (path.startsWith("/api/projects/")) {
+          path = "/api/projects/:id";
+        }
+
+        if (path.startsWith("/api/clients/")) {
+          path = "/api/clients/:id";
+        }
+
+        if (path.startsWith("/uploads/")) {
+          path = "/uploads/:id";
         }
 
         return path;
