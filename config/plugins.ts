@@ -38,32 +38,36 @@ export default {
           path = "/admin/:asset";
         }
 
-        // Content Manager - individual project IDs
-        if (
-          path.match(
-            /^\/content-manager\/collection-types\/api::project\.project\/[a-z0-9]+$/
-          )
-        ) {
-          path = "/content-manager/collection-types/api::project.project/:id";
-        }
+        // Content Manager - collection types with document IDs and actions
+        path = path.replace(
+          /\/content-manager\/collection-types\/(api::[^\/]+)\/([a-z0-9]+)(\/actions\/[^\/]+)?$/,
+          "/content-manager/collection-types/$1/:id$3"
+        );
 
-        // Content Manager - individual service IDs
-        if (
-          path.match(
-            /^\/content-manager\/collection-types\/api::service\.service\/[a-z0-9]+$/
-          )
-        ) {
-          path = "/content-manager/collection-types/api::service.service/:id";
-        }
+        // Content Manager - relations with document IDs (the pattern causing "/content-manager/:id/...")
+        path = path.replace(
+          /\/content-manager\/relations\/(api::[^\/]+)\/([a-z0-9]+)\//,
+          "/content-manager/relations/$1/:id/"
+        );
 
-        // Content Manager - project relations
-        if (
-          path.match(
-            /^\/content-manager\/relations\/api::project\.project\/[a-z0-9]+\//
-          )
-        ) {
-          path = path.replace(/\/[a-z0-9]+\//, "/:id/");
-        }
+        // Fix the incorrectly normalized routes (relations that got caught by another rule)
+        // This handles routes like "/content-manager/:id/api::project.project/xxx/client"
+        path = path.replace(
+          /\/content-manager\/relations\/(api::[^\/]+)\/([^\/]+)$/,
+          "/content-manager/relations/$1/:relation"
+        );
+
+        // Normalize single-type routes with actions
+        path = path.replace(
+          /\/content-manager\/single-types\/(api::[^\/]+)(\/actions\/[^\/]+)?$/,
+          "/content-manager/single-types/$1$2"
+        );
+
+        // Normalize content-type configuration routes
+        path = path.replace(
+          /\/content-manager\/content-types\/(api::[^\/]+|plugin::[^\/]+)\/configuration$/,
+          "/content-manager/content-types/:type/configuration"
+        );
 
         return path;
       },
