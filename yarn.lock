@@ -3730,6 +3730,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/express@npm:^5.0.0":
+  version: 5.0.3
+  resolution: "@types/express@npm:5.0.3"
+  dependencies:
+    "@types/body-parser": "npm:*"
+    "@types/express-serve-static-core": "npm:^5.0.0"
+    "@types/serve-static": "npm:*"
+  checksum: 10c0/f0fbc8daa7f40070b103cf4d020ff1dd08503477d866d1134b87c0390bba71d5d7949cb8b4e719a81ccba89294d8e1573414e6dcbb5bb1d097a7b820928ebdef
+  languageName: node
+  linkType: hard
+
 "@types/fined@npm:*":
   version: 1.1.5
   resolution: "@types/fined@npm:1.1.5"
@@ -5794,6 +5805,8 @@ __metadata:
     "@strapi/plugin-users-permissions": "npm:5.4.0"
     "@strapi/strapi": "npm:5.4.0"
     better-sqlite3: "npm:^11.3.0"
+    express-prom-bundle: "npm:^8.0.0"
+    koa-connect: "npm:^2.1.0"
     pg: "npm:8.8.0"
     prom-client: "npm:^15.1.3"
     react: "npm:^18.0.0"
@@ -7065,6 +7078,19 @@ __metadata:
   version: 3.1.1
   resolution: "exponential-backoff@npm:3.1.1"
   checksum: 10c0/160456d2d647e6019640bd07111634d8c353038d9fa40176afb7cd49b0548bdae83b56d05e907c2cce2300b81cae35d800ef92fefb9d0208e190fa3b7d6bb579
+  languageName: node
+  linkType: hard
+
+"express-prom-bundle@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "express-prom-bundle@npm:8.0.0"
+  dependencies:
+    "@types/express": "npm:^5.0.0"
+    on-finished: "npm:^2.3.0"
+    url-value-parser: "npm:^2.0.0"
+  peerDependencies:
+    prom-client: ">=15.0.0"
+  checksum: 10c0/778406611bbecbd2e407a55279fe45c19b04b11e91f4629c447a8fb14418f9c23d60294563ab0d40c6b6f4ec0f6387723846e1464b2f2984ce42d97287d32eec
   languageName: node
   linkType: hard
 
@@ -9299,6 +9325,13 @@ __metadata:
     http-errors: "npm:^1.8.1"
     koa-is-json: "npm:^1.0.0"
   checksum: 10c0/c3b9456330b1c3d02852af588a19b8a709616c67f2d2602d5d1bb2cf851a4387c76d350936ac373059b0c956c92dedb2d6cbe4aae3b5d3eb741835f949d22e9f
+  languageName: node
+  linkType: hard
+
+"koa-connect@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "koa-connect@npm:2.1.0"
+  checksum: 10c0/ddafb5d77817aef273d53e8a4f9bdee368980f233b476cd4c78f64ed29f2829e50a445bedbb51586deced2cfb39b8f881a94e9e8a067a4988618a8c37bc6eb0b
   languageName: node
   linkType: hard
 
@@ -14310,6 +14343,13 @@ __metadata:
   version: 4.0.1
   resolution: "url-join@npm:4.0.1"
   checksum: 10c0/ac65e2c7c562d7b49b68edddcf55385d3e922bc1dd5d90419ea40b53b6de1607d1e45ceb71efb9d60da02c681d13c6cb3a1aa8b13fc0c989dfc219df97ee992d
+  languageName: node
+  linkType: hard
+
+"url-value-parser@npm:^2.0.0":
+  version: 2.2.0
+  resolution: "url-value-parser@npm:2.2.0"
+  checksum: 10c0/774987d219ace10a023af1f361f9ff092d706adc2e2901694e7a23bdb7544a9576ecc98305839c84d4e50e80ce88f6f1703f5240bcd4e7f2fd39a1033100ff8e
   languageName: node
   linkType: hard
 
