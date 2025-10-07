@@ -19,18 +19,15 @@ export default (config, { strapi }) => {
       },
     },
     bypass: (req) => {
-      const path = (req.originalUrl || req.url || "").split("?")[0];
+      const path = req.url.split("?")[0];
       return !path.match(/^\/api/);
     },
     // Normalize paths to avoid high cardinality
-    normalizePath: (req, opts) => {
+    normalizePath: (req) => {
       // Remove IDs and other variable parts from paths
-      console.log({
-        url: req.url,
-        originalUrl: req.originalUrl,
-      });
 
       const path = req.url
+        .split("?")[0]
         .replace(/\/\d+/g, "/:id")
         .replace(/\/[0-9a-f]{24}/g, "/:id") // MongoDB ObjectIds
         .replace(/\/[0-9a-f-]{36}/g, "/:id"); // UUIDs
