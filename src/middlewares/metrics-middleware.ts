@@ -26,14 +26,13 @@ export default (config, { strapi }) => {
     // Normalize paths to avoid high cardinality
     normalizePath: (req) => {
       // Remove IDs and other variable parts from paths
+      const path = req.url.split("?")[0];
 
-      const path = req.url
-        .split("?")[0]
+      return path
         .replace(/\/\d+/g, "/:id")
         .replace(/\/[0-9a-f]{24}/g, "/:id") // MongoDB ObjectIds
-        .replace(/\/[0-9a-f-]{36}/g, "/:id"); // UUIDs
-
-      return path;
+        .replace(/\/[0-9a-f-]{36}/g, "/:id") // UUIDs
+        .replace(/\/[a-z0-9]{20,}/gi, "/:id");
     },
     ...config,
   });
