@@ -1,0 +1,16 @@
+name: cordada-cms
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: cordada
+      POSTGRES_PASSWORD: cordada
+      POSTGRES_DB: cordada
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
