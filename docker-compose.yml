@@ -1,14 +1,16 @@
 name: cordada-cms
 
 services:
-  api:
-    build: .
-    command: yarn start
+  db:
+    image: postgres:17-alpine
     environment:
-      DATABASE_HOST: db
-    env_file:
-      - .env
+      POSTGRES_USER: cordada
+      POSTGRES_PASSWORD: cordada
+      POSTGRES_DB: cordada
     ports:
-      - "1337:1337"
+      - "5432:5432"
     volumes:
-      - ./sqlite:/usr/src/app/sqlite
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
