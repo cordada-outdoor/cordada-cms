@@ -15,7 +15,7 @@ export interface AboutUsPersonAboutUsPerson extends Struct.ComponentSchema {
 }
 
 declare module '@strapi/strapi' {
-  export module Public {
+  export namespace Public {
     export interface ComponentSchemas {
       'about-us-person.about-us-person': AboutUsPersonAboutUsPerson;
     }
