@@ -7417,6 +7417,9 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^6.30.3"
     styled-components: "npm:^6.0.0"
+  dependenciesMeta:
+    better-sqlite3:
+      built: false
   languageName: unknown
   linkType: soft
 
