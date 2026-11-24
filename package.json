@@ -10,14 +10,12 @@
   "scripts": {
     "build": "strapi build",
     "develop": "strapi develop",
-    "openapi": "strapi openapi generate -o openapi.json",
     "services:start": "docker-compose -f ./docker-compose.yml up",
     "services:stop": "docker-compose -f ./docker-compose.yml down",
     "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/openapi": "5.63.0",
     "@strapi/plugin-cloud": "5.63.0",
     "@strapi/plugin-users-permissions": "5.63.0",
     "@strapi/strapi": "5.63.0",
