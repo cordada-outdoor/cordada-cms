@@ -7405,6 +7405,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "cordada-cms@workspace:."
   dependencies:
+    "@strapi/openapi": "npm:5.63.0"
     "@strapi/plugin-cloud": "npm:5.63.0"
     "@strapi/plugin-users-permissions": "npm:5.63.0"
     "@strapi/strapi": "npm:5.63.0"
